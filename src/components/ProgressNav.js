@@ -30,22 +30,36 @@ const ProgressNav = ({ registration_state }) => {
           <Flex align={"center"}>
             <Step
               step={registration_state.pages < 3 ? "..." : 3}
-              active={registration_state.pages === init + 2 ? true : false}
-              name={registration_state.pages < 3 ? "." : "Add new subgenre"}
+              active={
+                registration_state.pages === init + 2 ||
+                (registration_state.pages === init + 3 &&
+                  registration_state.temp_subgenre.length < 1)
+                  ? true
+                  : false
+              }
+              name={
+                registration_state.pages < 3
+                  ? "."
+                  : registration_state.temp_subgenre.length < 1
+                  ? "Information"
+                  : "Add new subgenre"
+              }
             />
-            {registration_state.pages === 4 && (
-              <Box mb="1.2rem" w={"150px"} borderBottom={"2px solid grey"} />
-            )}
+            {registration_state.pages === 4 &&
+              registration_state.temp_subgenre.length > 0 && (
+                <Box mb="1.2rem" w={"150px"} borderBottom={"2px solid grey"} />
+              )}
           </Flex>
-          {registration_state.pages === 4 && (
-            <Flex align={"center"}>
-              <Step
-                step="4"
-                active={registration_state.pages === init + 2 ? true : false}
-                name="Information"
-              />
-            </Flex>
-          )}
+          {registration_state.pages === 4 &&
+            registration_state.temp_subgenre.length > 0 && (
+              <Flex align={"center"}>
+                <Step
+                  step="4"
+                  active={registration_state.pages === init + 3 ? true : false}
+                  name="Information"
+                />
+              </Flex>
+            )}
         </Flex>
       </Box>
     </Flex>
@@ -68,7 +82,12 @@ const Step = ({ active, step, name, children, ...rest }) => {
         >
           {step}
         </Flex>
-        <Text textAlign={"center"} fontFamily={"bold"} fontSize={"12px"} fontWeight={"bold"}>
+        <Text
+          textAlign={"center"}
+          fontFamily={"bold"}
+          fontSize={"12px"}
+          fontWeight={"bold"}
+        >
           {name}
         </Text>
       </Flex>

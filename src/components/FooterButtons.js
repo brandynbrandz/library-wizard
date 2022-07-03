@@ -22,12 +22,12 @@ const FooterButtons = ({ registration_state, dispatch, ...props }) => {
   };
   return (
     <>
-      <Flex justify={"flex-end"} mt="10rem" align={"center"} gap={"20px"}>
+      <Flex justify={"flex-end"} mt="2rem" align={"center"} gap={"20px"}>
         <Button
           _focus={{ borderColor: "none" }}
           border="1px solid grey"
           w="10rem"
-          h={"4rem"}
+          h={"3rem"}
           bg="#fff"
           onClick={prevStep}
           isDisabled={registration_state.pages === 1}
@@ -38,7 +38,7 @@ const FooterButtons = ({ registration_state, dispatch, ...props }) => {
         <Button
           _focus={{ borderColor: "none" }}
           w="10rem"
-          h={"4rem"}
+          h={"3rem"}
           bg="grey"
           color={"#fff"}
           onClick={nextStep}

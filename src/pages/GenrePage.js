@@ -12,15 +12,15 @@ const GenrePage = ({ registration_state, dispatch }) => {
   return (
     <>
       <Flex w={"100%"} justify={"center"}>
-        <Box w="56%">
+        <Box w="70%" pl="40px" pr="40px" pb="20px" mt="10%" borderWidth="2px">
           <ProgressNav />
-          <Flex mt="10rem" flexWrap={"wrap"} gap={"5rem"}>
+          <Flex mt="2rem" flexWrap={"wrap"} gap={"2rem"}>
             {registration_state?.genres_collection.map((genre) => (
               <Button
                 key={genre.id}
                 _focus={{ borderColor: "none" }}
-                w="16rem"
-                h={"6rem"}
+                w="10rem"
+                h={"3rem"}
                 color={
                   genre.id === registration_state?.selected_genre[0]?.id
                     ? "#fff"
@@ -29,11 +29,11 @@ const GenrePage = ({ registration_state, dispatch }) => {
                 fontSize={"16px"}
                 bg={
                   genre.id === registration_state?.selected_genre[0]?.id
-                    ? "grey"
+                    ? "gray"
                     : "#fff"
                 }
-                border={"1px solid grey"}
-                _hover={{ bg: "grey", color: "#fff" }}
+                border={"1px solid gray"}
+                _hover={{ bg: "gray", color: "#fff" }}
                 onClick={() => handleClick(genre.id)}
               >
                 {genre.name}

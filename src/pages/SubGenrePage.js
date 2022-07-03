@@ -15,33 +15,41 @@ const SubGenrePage = ({ registration_state, dispatch }) => {
   return (
     <>
       <Flex w={"100%"} justify={"center"}>
-        <Box w="56%">
+        <Box w="70%" pl="40px" pr="40px" pb="20px" mt="10%" borderWidth="2px">
           <ProgressNav />
-          <Flex mt="10rem" flexWrap={"wrap"} gap={"5rem"}>
+          <Flex mt="2rem" flexWrap={"wrap"} gap={"2rem"}>
             {registration_state?.selected_genre[0]?.subgenres.map((genre) => (
               <Button
                 key={genre.id}
-                w="16rem"
-                h={"6rem"}
+                w="10rem"
+                h={"3rem"}
                 _focus={{ borderColor: "none" }}
                 fontSize={"16px"}
-                color={registration_state?.selected_subgenre[0]?.id === genre.id ? "#fff" : "black"}
-                bg={registration_state?.selected_subgenre[0]?.id === genre.id ? "grey" : "#fff"}
-                border={"1px solid grey"}
-                _hover={{ bg: "grey", color: "#fff" }}
+                color={
+                  registration_state?.selected_subgenre[0]?.id === genre.id
+                    ? "#fff"
+                    : "black"
+                }
+                bg={
+                  registration_state?.selected_subgenre[0]?.id === genre.id
+                    ? "grey"
+                    : "#fff"
+                }
+                border={"1px solid gray"}
+                _hover={{ bg: "gray", color: "#fff" }}
                 onClick={() => handleClick(genre.id)}
               >
                 {genre.name}
               </Button>
             ))}
             <Button
-              w="16rem"
-              h={"6rem"}
+              w="10rem"
+              h={"3rem"}
               fontSize={"16px"}
               _focus={{ borderColor: "none" }}
               bg="#fff"
-              border={"1px solid grey"}
-              _hover={{ bg: "grey", color: "#fff" }}
+              border={"1px solid gray"}
+              _hover={{ bg: "gray", color: "#fff" }}
               onClick={goToAddSubgenre}
             >
               Add new

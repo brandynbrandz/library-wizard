@@ -30,15 +30,16 @@ const InformationPage = () => {
   useEffect(() => {
     submitForm();
 
-//eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mustInput1,mustInput2,input]);
-  const isError = input === "";
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mustInput1, mustInput2, input]);
+  const isError1 = mustInput1 === "";
+  const isError2 = mustInput2 === "";
   return (
     <>
       <Flex w={"100%"} justify={"center"}>
-        <Box mt="2rem" ml="3%" w="57%">
+        <Box w="70%" pl="40px" pr="40px" pb="20px" mt="10%" borderWidth="2px">
           <ProgressNav />
-          <FormControl isRequired isInvalid={isError}>
+          <FormControl isRequired isInvalid={isError1}>
             <FormLabel htmlFor="book-title">Book title</FormLabel>
             <Input
               id="book-title"
@@ -46,7 +47,7 @@ const InformationPage = () => {
               onChange={(e) => setMustInput1(e.target.value)}
               value={mustInput1}
             />
-            {isError && (
+            {isError1 && (
               <FormErrorMessage>Book Title is required.</FormErrorMessage>
             )}
           </FormControl>
@@ -57,7 +58,7 @@ const InformationPage = () => {
               <option>Ohayo</option>
             </Select>
           </FormControl>
-          <FormControl mt="1rem" isRequired isInvalid={isError}>
+          <FormControl mt="1rem" isRequired isInvalid={isError2}>
             <FormLabel htmlFor="isbn">ISBN</FormLabel>
             <Input
               id="isbn"
@@ -65,7 +66,7 @@ const InformationPage = () => {
               onChange={(e) => setMustInput2(e.target.value)}
               value={mustInput2}
             />
-            {isError && <FormErrorMessage>ISBN is required.</FormErrorMessage>}
+            {isError2 && <FormErrorMessage>ISBN is required.</FormErrorMessage>}
           </FormControl>
           <FormControl mt="1rem">
             <FormLabel htmlFor="publisher">Publisher</FormLabel>
@@ -78,7 +79,7 @@ const InformationPage = () => {
             <FormLabel htmlFor="date-published">Date published</FormLabel>
             <Input id="date-published" placeholder="DD/MM/YYYY" />
           </FormControl>
-          <FormControl mt="1rem" isRequired w="20%">
+          <FormControl mt="1rem" isRequired w="25%">
             <FormLabel htmlFor="number-of-pages">Number of pages</FormLabel>
             <Input id="number-of-pages" placeholder="Number of pages" />
           </FormControl>
@@ -93,7 +94,11 @@ const InformationPage = () => {
             <Box width={"100%"}>
               <FormControl mt="1rem" isRequired>
                 <FormLabel htmlFor="isbn">Edition</FormLabel>
-                <Input id="isbn" placeholder="Edition" onChange={handleInputChange}/>
+                <Input
+                  id="isbn"
+                  placeholder="Edition"
+                  onChange={handleInputChange}
+                />
               </FormControl>
               <FormControl mt="1rem">
                 <FormLabel htmlFor="edition-language">
@@ -111,7 +116,7 @@ const InformationPage = () => {
             <Textarea id="description" placeholder="Type the description" />
           </FormControl>
 
-          <FooterButtons error={error} setError={setError}/>
+          <FooterButtons error={error} setError={setError} />
         </Box>
       </Flex>
     </>

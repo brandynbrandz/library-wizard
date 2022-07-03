@@ -7,7 +7,7 @@ const ProgressNav = ({ registration_state }) => {
   return (
     <Flex w={"100%"} justify={"center"}>
       <Box mt="3rem" w="100%">
-        <Text ml="3rem" fontFamily={"bold"} fontSize={"16px"}>
+        <Text ml="3rem" fontWeight={"bold"} fontSize={"16px"}>
           Add book - New book
         </Text>
         <Flex align={"center"}>
@@ -68,7 +68,7 @@ const Step = ({ active, step, name, children, ...rest }) => {
         >
           {step}
         </Flex>
-        <Text textAlign={"center"} fontFamily={"bold"} fontSize={"12px"}>
+        <Text textAlign={"center"} fontFamily={"bold"} fontSize={"12px"} fontWeight={"bold"}>
           {name}
         </Text>
       </Flex>

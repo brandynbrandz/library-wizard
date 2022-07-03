@@ -37,7 +37,7 @@ const InformationPage = () => {
   return (
     <>
       <Flex w={"100%"} justify={"center"}>
-        <Box w="70%" pl="40px" pr="40px" pb="20px" mt="10%" borderWidth="2px">
+        <Box w="70%" pl="40px" pr="40px" pb="20px" mt="10%" borderWidth="2px"  borderRadius='lg'>
           <ProgressNav />
           <FormControl isRequired isInvalid={isError1}>
             <FormLabel htmlFor="book-title">Book title</FormLabel>

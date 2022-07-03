@@ -33,7 +33,7 @@ const AddSubgenrePage = () => {
   return (
     <>
       <Flex w={"100%"} justify={"center"}>
-        <Box w="70%" pl ="40px" pr ="40px" pb ="20px" mt="10%" borderWidth='2px'>
+        <Box w="70%" pl ="40px" pr ="40px" pb ="20px" mt="10%" borderWidth='2px'  borderRadius='lg'>
           <ProgressNav />
           <Input placeholder={"Subgenre name"} value={formName} onChange={(e) => setFormName(e.target.value)} />
           <Flex mt="2rem" align={"center"} gap={"2rem"}>

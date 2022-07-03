@@ -12,10 +12,10 @@ const GenrePage = ({ registration_state, dispatch }) => {
   return (
     <>
       <Flex w={"100%"} justify={"center"}>
-        <Box w="70%" pl="40px" pr="40px" pb="20px" mt="10%" borderWidth="2px">
+        <Box w="70%" pl="40px" pr="40px" pb="20px" mt="10%" borderWidth="2px"  borderRadius='lg'>
           <ProgressNav />
           <Flex mt="2rem" flexWrap={"wrap"} gap={"2rem"}>
-            {registration_state?.genres_collection.map((genre) => (
+            {registration_state?.genres_schema.map((genre) => (
               <Button
                 key={genre.id}
                 _focus={{ borderColor: "none" }}

@@ -3,7 +3,7 @@ import { getHighestId } from "../helpers";
 import * as actionTypes from "./constant";
 
 const INITIAL_STATE = {
-  genres_collection: genres,
+  genres_schema: genres,
   selected_genre: [],
   pages: 1,
   selected_subgenre: [],
@@ -13,7 +13,7 @@ const INITIAL_STATE = {
 const wizardReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case actionTypes.SELECT_GENRE:
-      const item = state.genres_collection.find((item) => {
+      const item = state.genres_schema.find((item) => {
         return item.id === action.payload.id;
       });
 
@@ -50,11 +50,11 @@ const wizardReducer = (state = INITIAL_STATE, action) => {
       };
 
     case actionTypes.ADD_SUBGENRE:
-      const itemToBeAddedInto = state.genres_collection.find((item) => {
+      const itemToBeAddedInto = state.genres_schema.find((item) => {
         return item.id === action.payload.id;
       });
 
-      let highestId = getHighestId(state.genres_collection);
+      let highestId = getHighestId(state.genres_schema);
       let payload = {
         id: highestId + 1,
         ...action.payload.data,
@@ -65,13 +65,13 @@ const wizardReducer = (state = INITIAL_STATE, action) => {
         subgenres: [...itemToBeAddedInto.subgenres, payload],
       };
 
-      const newCollection = state.genres_collection.filter(
+      const newCollection = state.genres_schema.filter(
         (item) => item.id !== action.payload.id
       );
 
       return {
         ...state,
-        genres_collection:
+        genres_schema:
           newCollection.length > 1
             ? [...newCollection, newItem].sort((a, b) => a.id - b.id)
             : genres,

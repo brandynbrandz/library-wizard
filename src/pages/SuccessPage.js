@@ -17,6 +17,7 @@ const SuccessPage = ({ dispatch }) => {
           pb="20px"
           mt="10%"
           borderWidth="2px"
+          borderRadius='lg'
         >
           <Flex alignItems="center" direction="column">
             <Image

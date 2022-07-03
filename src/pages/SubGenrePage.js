@@ -15,7 +15,7 @@ const SubGenrePage = ({ registration_state, dispatch }) => {
   return (
     <>
       <Flex w={"100%"} justify={"center"}>
-        <Box w="70%" pl="40px" pr="40px" pb="20px" mt="10%" borderWidth="2px">
+        <Box w="70%" pl="40px" pr="40px" pb="20px" mt="10%" borderWidth="2px"  borderRadius='lg'>
           <ProgressNav />
           <Flex mt="2rem" flexWrap={"wrap"} gap={"2rem"}>
             {registration_state?.selected_genre[0]?.subgenres.map((genre) => (

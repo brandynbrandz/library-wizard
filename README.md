@@ -1,6 +1,6 @@
 # Lib-Wizard
 
-- A task by Tradecore. [DEMO](https://library-wizards.netflify.app//)
+- A task by Tradecore. [DEMO](https://library-wizards.netflify.app)
 
 # Technologies
 
